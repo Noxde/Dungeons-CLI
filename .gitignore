@@ -1,0 +1,12 @@
+node_modules
+out
+backup
+
+extracted.json
+extract.js
+getDuplicates.js
+updateDungeons.js
+userdata0000
+dungeons.json
+
+.env
