@@ -22,7 +22,6 @@
     "@inquirer/search": "^3.0.1",
     "@supabase/supabase-js": "^2.52.0",
     "axios": "^0.27.2",
-    "discord-oauth2": "^2.12.1",
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "inquirer": "^12.0.0",
