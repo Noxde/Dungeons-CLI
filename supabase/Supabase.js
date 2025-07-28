@@ -1,4 +1,3 @@
-const DiscordOauth2 = require("discord-oauth2");
 const { createClient } = require("@supabase/supabase-js");
 const path = require("path");
 
@@ -6,18 +5,14 @@ require("dotenv").config({
   quiet: true,
   path: path.join(process.cwd(), ".env"),
 });
-const { CLIENT_ID, CLIENT_SECRET, REDIRECT, SUPABASE_URL, SUPABASE_KEY } =
-  process.env;
 
 class DbManager {
   constructor() {
     this.user = null;
-    this.supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
-    this.oauth = new DiscordOauth2({
-      clientId: CLIENT_ID,
-      clientSecret: CLIENT_SECRET,
-      redirectUri: REDIRECT,
-    });
+    this.supabase = createClient(
+      "https://ztuqejypgetbjnlyogod.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0dXFlanlwZ2V0YmpubHlvZ29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI4OTIwMzQsImV4cCI6MjA2ODQ2ODAzNH0.a3P0Iainc6v5ROxL_qOfXgTr_IPyjY7mai01L-AnqZY"
+    );
   }
 
   async getAuthUrl() {
@@ -34,10 +29,6 @@ class DbManager {
     return url;
   }
 
-  async getUser(token) {
-    return this.oauth.getUser(token);
-  }
-
   async getDungeons() {
     const { data: dungeons, error } = await this.supabase
       .from("dungeon_upload")
@@ -48,13 +39,17 @@ class DbManager {
   }
 
   updateSession(code, user) {
-    this.supabase = createClient(SUPABASE_URL, SUPABASE_KEY, {
-      global: {
-        headers: {
-          Authorization: `Bearer ${code}`,
+    this.supabase = createClient(
+      "https://ztuqejypgetbjnlyogod.supabase.co",
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp0dXFlanlwZ2V0YmpubHlvZ29kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI4OTIwMzQsImV4cCI6MjA2ODQ2ODAzNH0.a3P0Iainc6v5ROxL_qOfXgTr_IPyjY7mai01L-AnqZY",
+      {
+        global: {
+          headers: {
+            Authorization: `Bearer ${code}`,
+          },
         },
-      },
-    });
+      }
+    );
     this.user = user;
   }
 
