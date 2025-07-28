@@ -325,7 +325,6 @@ async function main(dungeons, bytes, savePath) {
               .join(" "),
             description: desc,
           });
-          console.log(uploaded);
           uploaded.discord_username = supabase.user.user_metadata.full_name;
           supabase.userDungeons.push(uploaded);
 
