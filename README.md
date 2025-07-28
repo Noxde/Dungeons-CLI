@@ -5,6 +5,10 @@
 <h1 align="center">Dungeons CLI</h1>
 </div>
 
+> [!IMPORTANT]
+> This version is still a work in progress, if you need to use the script
+> please go to https://www.nexusmods.com/bloodborne/mods/121 instead
+
 <!-- prettier-ignore -->
 > [!IMPORTANT]
 > **To use this script on Playstation you first need to decrypt your bloodborne save, check out the [wiki](https://github.com/Noxde/Bloodborne-save-editor/wiki/How-to-decrypt-a-save) if you don't know how.**
