@@ -37,9 +37,9 @@ This script will let you add chalice dungeons from a list with +150 dungeons req
 
 ## 3. Download
 
-You can download the pre-built executable for your operating system from the [Releases](https://github.com/Noxde/Bloodborne-save-editor/releases) section.
+You can download the pre-built executable for your operating system from the [Releases](https://github.com/Noxde/Dungeons-CLI/releases) section.
 
-If you encounter any bug please [make an issue](https://github.com/Noxde/Bloodborne-save-editor/issues/new)
+If you encounter any bug please [make an issue](https://github.com/Noxde/Dungeons-CLI/issues/new)
 
 ## 4. Build from source
 
