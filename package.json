@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pkg --targets node18-win,node18-linux . -o ./out/dungeon --compress GZip --options no-warnings=ExperimentalWarning",
-    "debug": "pkg --targets node18-linux -d . -o ./out/dungeon",
+    "build": "npx pkg --targets node18-win,node18-linux . -o ./out/dungeon --compress GZip --options no-warnings=ExperimentalWarning",
+    "debug": "npx pkg --targets node18-linux -d . -o ./out/dungeon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

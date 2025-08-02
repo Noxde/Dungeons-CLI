@@ -1,0 +1,36 @@
+name: "build"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libwebkit2gtk-4.0-dev libappindicator3-dev librsvg2-dev patchelf
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: "npm"
+
+      - name: Build
+        run: npm run build
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dungeon.exe
+          path: out/dungeon-win.exe
+
+      - name: Upload LinuxArtifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dungeon
+          path: out/dungeon-linux
