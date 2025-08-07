@@ -1,5 +1,5 @@
 const express = require("express");
-import("open").then((mod) => (global.open = mod.default));
+const open = require("open");
 
 let PORT = 5173;
 const path = require("path");
