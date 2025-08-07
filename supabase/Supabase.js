@@ -61,6 +61,7 @@ class DbManager {
       .upsert({
         description: dungeon.description,
         bytes: dungeon.bytes,
+        name: dungeon.name,
         discord_user: dungeon.discord_user,
       })
       .select("*");

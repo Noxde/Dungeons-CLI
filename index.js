@@ -283,7 +283,7 @@ async function main(dungeons, bytes, savePath) {
           }
 
           choices = supabase.userDungeons.map((x) => ({
-            name: x.id,
+            name: x.name,
             value: x.bytes.split(" "),
             description: `${x.description}\nUploaded by: ${x.discord_username}`,
           }));
@@ -313,6 +313,11 @@ async function main(dungeons, bytes, savePath) {
           }
           console.log(`Logged in as: ${supabase.user.user_metadata.full_name}`);
 
+          const name = await input({
+            message: "Provide a short name for the dungeon",
+            default: "",
+          });
+
           const desc = await input({
             message: "Provide a description for the dungeon",
             default: "",
@@ -323,6 +328,7 @@ async function main(dungeons, bytes, savePath) {
               .toJSON()
               .data.map((x) => x.toString("16"))
               .join(" "),
+            name,
             description: desc,
           });
           uploaded.discord_username = supabase.user.user_metadata.full_name;
