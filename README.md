@@ -6,7 +6,7 @@
 </div>
 
 > [!IMPORTANT]
-> This version is still a work in progress, if you need to use the script
+> This version is still a work in progress, if you don't want to share or use dungeons shared by other users
 > please go to https://www.nexusmods.com/bloodborne/mods/121 instead
 
 <!-- prettier-ignore -->
