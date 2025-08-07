@@ -1,4 +1,5 @@
 const express = require("express");
+import("open").then((mod) => (global.open = mod.default));
 
 let PORT = 5173;
 const path = require("path");
@@ -42,16 +43,10 @@ app.get("/auth", async (req, res) => {
   }
 });
 
-// app.listen(PORT, async () => {
-//   console.log(`Listening on ${PORT}`);
-//   console.log(await supabase.getAuthUrl());
-// });
-
 module.exports = {
   startServer() {
     server = app.listen(PORT, async () => {
-      // console.log(`Listening on ${PORT}`);
-      console.log(await supabase.getAuthUrl());
+      await open(await supabase.getAuthUrl());
     });
   },
   stopServer() {
